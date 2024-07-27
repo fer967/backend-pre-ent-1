@@ -57,5 +57,32 @@ router.delete("/:pid", async(req, res) => {
     }
 })
 
+// JULIDEV    PUT
+
+router.put("/:pid", async(req, res) => {
+    const {pid} = req.params;
+    try{
+    const{title, description, price, code, stock, category, status, thumbnails} = req.body;
+    const response = await manager.updateProduct(pid, {title, description, price, code, stock, category, status, thumbnails});
+    res.json(response)
+    } catch(error){
+    console.log(error)
+    res.send(`error al actualizar el producto con id ${pid}`)
+    }
+    })
 
 module.exports = router; 
+
+// EJEMPLO PROFE
+// Actualizo un producto por id
+/*router.put("/:pid", async(req, res) => {
+    let id = req.params.pid;
+    const {prodParaActualizar}= req.body;
+    const updatedProd = await manager.updateProduct(id, {prodParaActualizar});
+    res.send(updatedProd);
+    if(updatedProd){
+        res.status(200).send(`se actualizo ${updatedProd.title} correctamente`);
+    } else{
+        res.status(404).send({message:"error", error:"producto no encontrado"});
+    }
+})*/

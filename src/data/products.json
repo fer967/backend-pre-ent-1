@@ -1,35 +1,35 @@
 [
-  {
-    "title": "guitarra",
-    "description": "criolla",
-    "price": 1500,
-    "code": "abc123",
-    "stock": 6,
-    "category": "cuerdas",
-    "status": "true",
-    "thumbnails": [],
-    "id": 1
-  },
-  {
-    "title": "flauta",
-    "description": "dulce",
-    "price": 800,
-    "code": "abc124",
-    "stock": 8,
-    "category": "vientos",
-    "status": "true",
-    "thumbnails": [],
-    "id": 2
-  },
-  {
-    "title": "teclado",
-    "description": "midi",
-    "price": 3600,
-    "code": "abc125",
-    "stock": 4,
-    "category": "teclados",
-    "status": "true",
-    "thumbnails": [],
-    "id": 3
-  }
+    {
+        "title": "guitarra",
+        "description": "criolla",
+        "price": 1500,
+        "code": "abc123",
+        "stock": 6,
+        "category": "cuerdas",
+        "status": "true",
+        "thumbnails": [],
+        "id": 1
+    },
+    {
+        "title": "flauta",
+        "description": "dulce",
+        "price": 800,
+        "code": "abc124",
+        "stock": 8,
+        "category": "vientos",
+        "status": "true",
+        "thumbnails": [],
+        "id": 2
+    },
+    {
+        "title": "teclado",
+        "description": "midi",
+        "price": 3600,
+        "code": "abc125",
+        "stock": 4,
+        "category": "teclados",
+        "status": "true",
+        "thumbnails": [],
+        "id": 3
+    }
 ]
