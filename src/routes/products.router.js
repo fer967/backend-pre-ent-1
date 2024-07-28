@@ -3,7 +3,6 @@ const ProductManager = require("../controllers/product-manager.js");
 const manager = new ProductManager("./src/data/products.json");
 const router = express.Router();
 
-// obtengo todos los productos ( puedo usar limite)
 router.get("/", async (req, res) => {
     const limit = req.query.limit;
     try {
@@ -18,8 +17,6 @@ router.get("/", async (req, res) => {
     }
 })
 
-
-//Busco un producto por id 
 router.get("/:pid", async (req, res) => {
     let id = req.params.pid;
     try {
@@ -34,8 +31,6 @@ router.get("/:pid", async (req, res) => {
     }
 })
 
-
-//Agrego un producto nuevo
 router.post("/", async (req, res) => {
     const newProduct = req.body;
     try {
@@ -46,7 +41,6 @@ router.post("/", async (req, res) => {
     }
 })
 
-// Elimino un producto por id
 router.delete("/:pid", async(req, res) => {
     let id = req.params.pid;
     const deletedProd = await manager.deleteProduct(parseInt(id));
@@ -56,8 +50,6 @@ router.delete("/:pid", async(req, res) => {
         res.status(200).send(`se elimino ${deletedProd.title} correctamente`);
     }
 })
-
-// JULIDEV    PUT
 
 router.put("/:pid", async(req, res) => {
     const {pid} = req.params;
@@ -73,16 +65,3 @@ router.put("/:pid", async(req, res) => {
 
 module.exports = router; 
 
-// EJEMPLO PROFE
-// Actualizo un producto por id
-/*router.put("/:pid", async(req, res) => {
-    let id = req.params.pid;
-    const {prodParaActualizar}= req.body;
-    const updatedProd = await manager.updateProduct(id, {prodParaActualizar});
-    res.send(updatedProd);
-    if(updatedProd){
-        res.status(200).send(`se actualizo ${updatedProd.title} correctamente`);
-    } else{
-        res.status(404).send({message:"error", error:"producto no encontrado"});
-    }
-})*/

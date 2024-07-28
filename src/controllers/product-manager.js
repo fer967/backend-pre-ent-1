@@ -53,6 +53,18 @@ class ProductManager {
         }
     }
 
+    async updateProduct(id, {...data }){
+        const response = await this.leerArchivo();
+        const index = response.findIndex(prod => prod.id == id);
+        if (index != -1) {
+            response[index] = { id, ...data };
+            await this.guardarArchivo(response);
+            return response[index]
+        } else {
+            console.log("producto no encontrado");
+        }
+    }
+
     async deleteProduct(id) {
         const arrayProductos = await this.leerArchivo();
         const indexProd = arrayProductos.findIndex(item => item.id === id);
@@ -75,18 +87,6 @@ class ProductManager {
 
     async guardarArchivo(arrayProductos) {
         await fs.writeFile(this.path, JSON.stringify(arrayProductos, null, 2));
-    }
-
-    async updateProduct(id, {...data }){
-        const response = await this.leerArchivo();
-        const index = response.findIndex(prod => prod.id == id);
-        if (index != -1) {
-            response[index] = { id, ...data };
-            await this.guardarArchivo(response);
-            return response[index]
-        } else {
-            console.log("producto no encontrado");
-        }
     }
 
 }
