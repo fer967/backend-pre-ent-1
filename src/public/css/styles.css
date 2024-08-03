@@ -1,0 +1,79 @@
+.container{
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    gap: 15px;
+}
+
+.real-time-container{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: rgba(128, 128, 128, 0.7);
+    padding: 5px;
+}
+
+.card{
+    background-color: darkseagreen;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black solid 2px;
+    border-radius: 6px;
+    padding:6px;
+}
+
+.card-body{
+    background-color: darkseagreen;
+    width: 10vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: black solid 2px;
+    border-radius: 6px;
+    padding:6px;
+    gap: 2px;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+p{
+    color: blue;
+}
+
+h1{
+    text-align: center;
+}
+
+.button{
+    border: 1px solid black;
+    background-color: black;
+    color: white;
+    border-radius: 6px;
+}
+
+.form{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.real-time{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}

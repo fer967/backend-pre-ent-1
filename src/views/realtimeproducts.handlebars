@@ -1,0 +1,47 @@
+<div class="real-time-container">
+    <h1>Mis Productos</h1>
+    <form class="form" id="formProduct">
+    <div>
+        <label for="title" class="">title</label>
+        <input type="text" name="title" id="title" required>
+    </div>
+    <div>
+        <label for="description" class="">description</label>
+        <input type="text" name="description" id="description" required>
+    </div>
+    <div>
+        <label for="price" class="">price</label>
+        <input type="number" name="price" id="price" required>
+    </div>
+    <div>
+        <label for="code" class="">code</label>
+        <input type="text" name="code" id="code" required>
+    </div>
+    <div>
+        <label for="stock" class="">stock</label>
+        <input type="number" name="stock" id="stock" required>
+    </div>
+    <div>
+        <button class="button" type="submit" id="add-btn">agregar</button>
+    </div>
+    <div>
+        <label for="id-prod" class="">Id del producto a eliminar</label>
+        <div>
+            <input type="number" name="id-prod" id="id-prod">
+        </div>
+    </div>
+    <div>
+        <button class="button" type="button" id="delete-btn">eliminar</button>
+    </div>
+</form>
+
+<div class="real-time" id="list-product">
+{{!-- muestro productos agregados --}}
+</div>
+</div>
+
+{{!--  socket lado CLIENTE --}}
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+
+<script src="js/main.js"></script>
+

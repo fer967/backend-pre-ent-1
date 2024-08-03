@@ -10,9 +10,9 @@ class ProductManager {
         this.path = path;
     }
 
-    async addProduct({ title, description, price, code, stock, category, status, thumbnails }) {
+    async addProduct({ title, description, price, code, stock}) {
         const arrayProductos = await this.leerArchivo();
-        if (!title || !description || !price || !code || !stock || !category || !status || !thumbnails) {
+        if (!title || !description || !price || !code || !stock) {
             console.log("Todos los campos son obligatorios");
             return;
         }
@@ -26,9 +26,6 @@ class ProductManager {
             price,
             code,
             stock,
-            category,
-            status: true,
-            thumbnails: []
         }
         if (arrayProductos.length > 0) {
             ProductManager.ultId = arrayProductos.reduce((maxId, product) => Math.max(maxId, product.id), 0);
